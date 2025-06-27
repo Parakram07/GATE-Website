@@ -3,7 +3,7 @@ import type { Metadata } from "next"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "GATE College - Premier Education",
+  title: "GATE College  Education",
   description: "Shaping futures through excellence in education, innovation, and community engagement.",
   keywords: "education, college, university, GATE College, academic programs",
     generator: 'v0.dev'
@@ -24,7 +24,8 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="font-sans antialiased">{children}</body>
+      <body className="font-sans antialiased">{children}
+      </body>
     </html>
   )
 }

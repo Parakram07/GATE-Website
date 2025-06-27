@@ -1,0 +1,4 @@
+Admin Login
+
+email: admin@gate.edu.np
+pass: 100%Gate.admin2025
