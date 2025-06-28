@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Twitter, Instagram, Linkedin, Mail, Phone } from "lucide-react"
+import { Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from "lucide-react"
 
 export function Footer() {
   return (
@@ -8,10 +8,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
-                <span className="text-blue-800 font-bold text-sm">G</span>
-              </div>
-              <span className="font-serif font-bold text-xl">GATE College</span>
+              <img src="/GateLogo.png" alt="GATE College Logo" className="w-36 h-22" />
             </div>
             <p className="text-blue-200 mb-4">
               Shaping futures through excellence in education, innovation, and community engagement.
@@ -65,11 +62,15 @@ export function Footer() {
             <div className="space-y-2">
               <div className="flex items-center space-x-2">
                 <Mail className="h-4 w-4" />
-                <span className="text-blue-200">admissions@gatecollege.edu</span>
+                <span className="text-blue-200">info@gate.edu.np</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Phone className="h-4 w-4" />
-                <span className="text-blue-200">01-4650176</span>
+                <span className="text-blue-200">01-4650176 |9802323482 | 9802323495</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <MapPin className="h-4 w-4" />
+                <span className="text-blue-200">Mandikhatar, Kathmandu, Nepal</span>
               </div>
             </div>
           </div>
