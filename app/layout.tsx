@@ -3,7 +3,7 @@ import type { Metadata } from "next"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "GATE College  Education",
+  title: "GATE Admin Panel",
   description: "Shaping futures through excellence in education, innovation, and community engagement.",
   keywords: "education, college, university, GATE College, academic programs",
     generator: 'v0.dev'
