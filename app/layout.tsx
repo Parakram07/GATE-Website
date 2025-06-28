@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "GATE Admin Panel",
   description: "Shaping futures through excellence in education, innovation, and community engagement.",
   keywords: "education, college, university, GATE College, academic programs",
-    generator: 'v0.dev'
+    generator: 'Parakram, Sanskar'
 }
 
 export default function RootLayout({
