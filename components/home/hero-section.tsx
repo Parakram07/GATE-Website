@@ -43,7 +43,7 @@ export function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          The best and leading Hospitality Management college(BHM) in Nepal.
+          The best and leading Hospitality Management college in Nepal.
         </motion.p>
 
         <motion.div

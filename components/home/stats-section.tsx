@@ -1,30 +1,32 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { useInView } from "framer-motion"
-import { useRef, useEffect, useState } from "react"
+import { motion, useInView } from "framer-motion";
+import { useRef, useEffect, useState } from "react";
 
 function AnimatedCounter({ end, duration = 2000 }: { end: number; duration?: number }) {
-  const [count, setCount] = useState(0)
-  const ref = useRef(null)
-  const isInView = useInView(ref)
+  const [count, setCount] = useState(0);
+  const [hasAnimated, setHasAnimated] = useState(false); // New state to track animation
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true }); // Set once: true to trigger only once
 
   useEffect(() => {
-    if (isInView) {
-      let startTime: number
+    if (isInView && !hasAnimated) {
+      let startTime: number;
       const animate = (currentTime: number) => {
-        if (!startTime) startTime = currentTime
-        const progress = Math.min((currentTime - startTime) / duration, 1)
-        setCount(Math.floor(progress * end))
+        if (!startTime) startTime = currentTime;
+        const progress = Math.min((currentTime - startTime) / duration, 1);
+        setCount(Math.floor(progress * end));
         if (progress < 1) {
-          requestAnimationFrame(animate)
+          requestAnimationFrame(animate);
+        } else {
+          setHasAnimated(true); // Mark animation as completed
         }
-      }
-      requestAnimationFrame(animate)
+      };
+      requestAnimationFrame(animate);
     }
-  }, [isInView, end, duration])
+  }, [isInView, end, duration, hasAnimated]);
 
-  return <span ref={ref}>{count.toLocaleString()}</span>
+  return <span ref={ref}>{count.toLocaleString()}</span>;
 }
 
 export function StatsSection() {
