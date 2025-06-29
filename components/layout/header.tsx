@@ -17,6 +17,12 @@ export function Header() {
     { name: "News & Events", href: "/news-events" },
   ];
 
+  const logos = [
+    { src: "/GateLogo.png", alt: "GATE Logo", url: "" },
+    { src: "/EHL.png", alt: "EHL Logo", url: "https://www.ehl.edu" },
+    { src: "/TAFE.png", alt: "TAFE Logo", url: "https://www.tafensw.edu.au" },
+  ];
+
   return (
     <>
       {/* Top Header with admission info */}
@@ -49,7 +55,7 @@ export function Header() {
       {/* Main Header */}
       <header className="bg-white shadow-sm sticky top-0 z-50">
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-12"> {/* Adjusted to h-16 to fit larger logos */}
+          <div className="flex justify-between items-center h-12">
             {/* Menu button with text */}
             <div>
               <Button
@@ -60,12 +66,12 @@ export function Header() {
               >
                 {isMenuOpen ? (
                   <>
-                    <X className="h-6 w-6" /> {/* Adjusted icon size */}
+                    <X className="h-6 w-6" />
                     <span className="text-sm font-medium">Close</span>
                   </>
                 ) : (
                   <>
-                    <Menu className="h-8 w-8" /> {/* Adjusted icon size */}
+                    <Menu className="h-8 w-8" />
                     <span className="text-sm font-medium">Menu</span>
                   </>
                 )}
@@ -74,15 +80,22 @@ export function Header() {
 
             {/* Logo images on the right */}
             <div className="flex items-center space-x-4">
-              <div className="w-20 h-16 relative"> {/* Increased to w-20 h-16 */}
-                <Image src="/GateLogo.png" alt="GATE Logo 1" fill className="object-contain" />
-              </div>
-              <div className="w-20 h-16 relative"> {/* Increased to w-20 h-16 */}
-                <Image src="/EHL.png" alt="GATE Logo 2" fill className="object-contain" />
-              </div>
-              <div className="w-20 h-16 relative"> {/* Increased to w-20 h-16 */}
-                <Image src="/TAFE.png" alt="GATE Logo 3" fill className="object-contain" />
-              </div>
+              {logos.map((logo) => (
+                <Link
+                  key={logo.alt}
+                  href={logo.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-20 h-16 relative hover:opacity-80 transition-opacity"
+                >
+                  <Image
+                    src={logo.src}
+                    alt={logo.alt}
+                    fill
+                    className="object-contain"
+                  />
+                </Link>
+              ))}
             </div>
           </div>
 

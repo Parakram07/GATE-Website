@@ -42,7 +42,7 @@ export default function AdminNewsEventsPage() {
       return
     }
 
-    const userMetadata = session.user.app_metadata || session.user.raw_app_meta_data
+    const userMetadata = session.user.app_metadata || session.user.app_metadata
     if (userMetadata?.role !== "super-admin") {
       router.push("/admin/login")
       return

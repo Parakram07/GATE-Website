@@ -28,7 +28,7 @@ export default function AdminDashboard() {
         }
 
         // Check super-admin role
-        const userMetadata = session.user.app_metadata || session.user.raw_app_meta_data
+        const userMetadata = session.user.app_metadata || session.user.app_metadata
         console.log("Admin dashboard - User metadata:", userMetadata)
 
         if (userMetadata?.role !== "super-admin") {
