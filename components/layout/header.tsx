@@ -20,7 +20,7 @@ export function Header() {
   return (
     <>
       {/* Top Header with admission info */}
-      <div className="bg-blue-800 text-white py-3">
+      <div className="bg-gradient-to-r from-blue-500 to-blue-800 text-white py-3">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center space-y-2 lg:space-y-0">
             {/* Text - Centered */}
